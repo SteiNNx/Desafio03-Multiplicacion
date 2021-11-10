@@ -3,7 +3,7 @@
 const MIN_NUM = 1;
 const MAX_NUM = 20;
 const BASE_NUM_FACT = 1;
-const ZERO_NUM_FACT = 0;
+const ITERATION_NUM_FACT = 2;
 
 /** Solicitud de Números */
 const numero = window.prompt('Ingrese N°, para obtener su tabla de multiplicacion y factorial');
@@ -17,11 +17,10 @@ if (typeof numero_parseado === 'NaN' || isNaN(numero_parseado) || numero_parsead
 
 /** Funciones */
 const factorial = function (numero_factorial) {
-    if (numero_factorial == ZERO_NUM_FACT) {
-        return BASE_NUM_FACT;
-    } else {
-        return factorial(numero_factorial - BASE_NUM_FACT) * numero_factorial;
-    }
+    let response = BASE_NUM_FACT;
+    for (let i = ITERATION_NUM_FACT; i <= numero_factorial; i++)
+        response = response * i;
+    return response;
 }
 
 const multiplicar = function (factor, coeficiente) {
